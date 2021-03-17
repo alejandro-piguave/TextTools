@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Text Tools</string>
+    <string name="input_text_title">Texto de entrada</string>
+    <string name="num_repetitions">Repeticiones</string>
+    <string name="repeat">Repetir</string>
+    <string name="settings">Opciones</string>
+    <string name="clipboard_copied">Copiado al portapapeles</string>
+    <string name="invalid_repetitions_number">Número de repeticiones inválido</string>
+
+    <string name="auto_space_title">Espacios automáticos</string>
+    <string name="auto_space_summary">Coloca espacios automáticamente entre cada repetición de tu texto.</string>
+
+    <string name="auto_trim_title">Recortar texto</string>
+    <string name="auto_trim_summary">Elimina automáticamente los espacios en blanco iniciales y finales de tu texto.</string>
+
+
+    <string name="repetitions_limit_title">Límite de repeticiones</string>
+    <string name="repetitions_limit_summary">Previene el uso de un número de repeticiones muy alto estableciendo el límite en 9999</string>
+    <string name="text_too_long_to_be_copied">Tu texto es muy largo y no cabe en el portapapeles. Prueba a usar un número menor de repeticiones.</string>
+    <string name="text_too_long_to_be_shared">Tu texto es demasiado largo para ser compartido. Prueba a usar un número menor de repeticiones.</string>
+    <string name="share">Compartir</string>
+    <string name="copy">Copiar</string>
+
+
+    <string-array name="text_tools">
+        <item>Separar texto</item>
+        <item>Unir texto</item>
+        <item>Repetir texto</item>
+    </string-array>
+    <string name="use_newline_character_as_separator">Usar caracter de salto de línea como delimitador</string>
+    <string name="use_custom_delimiter">Usar delimitador propio</string>
+    <string name="invalid_input_text">Texto de entrada inválido</string>
+    <string name="invalid_output_text">Texto de salida inválido</string>
+    <string name="split_separator_options">Opciones del separador de texto</string>
+    <string name="input_character">Caracter de entrada</string>
+    <string name="use_symbol_for_splitting">Usar símbolo para separar</string>
+    <string name="use_regex_for_splitting">Usar expresión regular para separar</string>
+    <string name="regex">Expresión regular</string>
+    <string name="use_length_for_splitting">Usar longitud para separar</string>
+    <string name="length">Longitud</string>
+    <string name="split">Separar</string>
+    <string name="output_character">Caracter de salida</string>
+    <string name="char_before_chunk">Caracter al principio del fragmento</string>
+    <string name="char_after_chunk">Caracter al final del fragmento</string>
+    <string name="output_separator_options">Opciones del separador de salida</string>
+    <string name="invalid_symbol">Invalid symbol</string>
+    <string name="invalid_regex">Expresión regular inválida</string>
+    <string name="invalid_length">Longitud inválida</string>
+
+</resources>

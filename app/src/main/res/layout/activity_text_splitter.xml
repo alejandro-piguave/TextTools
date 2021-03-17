@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    tools:context="com.alexpi.texttools.TextRepeaterActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.alexpi.texttools.custom.CustomTextField
+            android:id="@+id/inputField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/input_text_title" />
+        </com.alexpi.texttools.custom.CustomTextField>
+
+        <CheckedTextView
+            android:id="@+id/splitSeparatorOptionsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/purple_500"
+            android:clickable="true"
+            android:focusable="true"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:text="@string/split_separator_options"
+            app:layout_constraintTop_toBottomOf="@+id/inputField"
+            android:checked="true"
+            android:checkMark="@drawable/arrow_drop_down_selector"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <RadioGroup
+            android:id="@+id/splitSeparatorOptionsRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/splitSeparatorOptionsLabel">
+
+            <RadioButton
+                android:id="@+id/symbolRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/use_symbol_for_splitting"/>
+
+            <com.alexpi.texttools.custom.CustomTextField
+                android:id="@+id/symbolField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/symbolEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/input_character" />
+            </com.alexpi.texttools.custom.CustomTextField>
+
+            <RadioButton
+                android:id="@+id/regexRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/use_regex_for_splitting"/>
+
+            <com.alexpi.texttools.custom.CustomTextField
+                android:id="@+id/regexField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/regexEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/regex"/>
+            </com.alexpi.texttools.custom.CustomTextField>
+
+            <RadioButton
+                android:id="@+id/lengthRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/use_length_for_splitting"/>
+
+            <com.alexpi.texttools.custom.CustomTextField
+                android:id="@+id/lengthField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lengthEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:hint="@string/length"/>
+            </com.alexpi.texttools.custom.CustomTextField>
+        </RadioGroup>
+
+        <CheckedTextView
+            android:id="@+id/outputSeparatorOptionsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/purple_500"
+            android:clickable="true"
+            android:focusable="true"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:text="@string/output_separator_options"
+            app:layout_constraintTop_toBottomOf="@+id/splitSeparatorOptionsRadioGroup"
+            android:checked="true"
+            android:checkMark="@drawable/arrow_drop_down_selector"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <LinearLayout
+            android:id="@+id/outputSeparatorOptionsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/outputSeparatorOptionsLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <com.alexpi.texttools.custom.CustomTextField
+                android:id="@+id/outputCharacterField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/outputCharacterEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/output_character" />
+            </com.alexpi.texttools.custom.CustomTextField>
+
+            <com.alexpi.texttools.custom.CustomTextField
+                android:id="@+id/charBeforeChunkField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/charBeforeChunkEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/char_before_chunk"/>
+            </com.alexpi.texttools.custom.CustomTextField>
+
+            <com.alexpi.texttools.custom.CustomTextField
+                android:id="@+id/charAfterChunkField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/charAfterChunkEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/char_after_chunk"/>
+            </com.alexpi.texttools.custom.CustomTextField>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/resultLabel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/splitButton"
+            android:gravity="top" />
+
+        <ProgressBar
+            android:id="@+id/progressView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/splitButton" />
+
+
+        <Button
+            android:id="@+id/splitButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="16dp"
+            android:text="@string/split"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/outputSeparatorOptionsLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
