@@ -3,7 +3,6 @@ package com.alexpi.texttools
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -12,7 +11,6 @@ import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
-import com.alexpi.texttools.base.BaseToolActivity
 import com.alexpi.texttools.databinding.ActivityTextRepeaterBinding
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.Dispatchers
@@ -55,64 +53,10 @@ class TextRepeaterActivity  : BaseToolActivity<ActivityTextRepeaterBinding>() {
         }
 
     }
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.share -> {
-                if (binding.resultLabel.text.toString().isEmpty()) {
-                    Toast.makeText(
-                        this,
-                        resources.getString(R.string.invalid_output_text),
-                        Toast.LENGTH_LONG
-                    ).show()
-                    binding.resultLabel.startAnimation(shakeAnimation)
-                } else {
-                    try {
-                        val sendIntent = Intent()
-                        sendIntent.action = Intent.ACTION_SEND
-                        sendIntent.putExtra(Intent.EXTRA_TEXT, binding.resultLabel.text.toString())
-                        sendIntent.type = "text/plain"
-                        startActivity(sendIntent)
-                    }catch (e: Exception){
-                        Snackbar.make(findViewById(android.R.id.content),R.string.text_too_long_to_be_shared,
-                            Snackbar.LENGTH_LONG).show()
-                    }
-                }
-                return true
-            }
-            R.id.copy -> {
-                if (binding.resultLabel.text.toString().trim().isEmpty()) {
-                    Toast.makeText(
-                        this,
-                        resources.getString(R.string.invalid_output_text),
-                        Toast.LENGTH_LONG
-                    ).show()
-                    binding.resultLabel.startAnimation(shakeAnimation)
-                } else {
-                    val manager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
-                    try{
-                        manager.setPrimaryClip(
-                            ClipData.newPlainText(
-                                binding.resultLabel.text.toString(),
-                                binding.resultLabel.text.toString()
-                            )
-                        )
-                        Toast.makeText(this, getString(R.string.clipboard_copied), Toast.LENGTH_SHORT)
-                            .show()
-                    }catch (e: Exception){
-                        Snackbar.make(findViewById(android.R.id.content),R.string.text_too_long_to_be_copied,Snackbar.LENGTH_LONG).show()
-                    }
 
-                }
-                return true
-            }
-            else -> return super.onOptionsItemSelected(item)
-        }
-    }
+    override fun getResultString(): String = binding.resultLabel.text.toString()
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.text_tool_menu, menu)
-        return true
-    }
+
 
     private fun repeatText(text: String, repetitions: Int, delimiter: String) {
         binding.progressView.isVisible = true

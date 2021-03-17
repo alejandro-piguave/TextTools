@@ -6,8 +6,8 @@ import android.content.*
 import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.GridLayoutManager
+import com.alexpi.texttools.custom.TextToolsAdapter
 import com.alexpi.texttools.databinding.ActivityMainBinding
-import com.alexpi.texttools.textsplitter.TextSplitterActivity
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 
@@ -23,12 +23,13 @@ class MainActivity : AppCompatActivity() {
         with(binding){
             mainBanner.loadAd(AdRequest.Builder().build())
             val toolsList = resources.getStringArray(R.array.text_tools)
-            val adapter = TextToolsAdapter(toolsList.toList()){ position ->
-                when(position){
-                    0 -> startActivity<TextSplitterActivity>()
-                    2 -> startActivity<TextRepeaterActivity>()
+            val adapter =
+                TextToolsAdapter(toolsList.toList()) { position ->
+                    when (position) {
+                        0 -> startActivity<TextSplitterActivity>()
+                        2 -> startActivity<TextRepeaterActivity>()
+                    }
                 }
-            }
 
             toolsView.adapter = adapter
             toolsView.layoutManager = GridLayoutManager(this@MainActivity,2)

@@ -1,4 +1,4 @@
-package com.alexpi.texttools.textsplitter
+package com.alexpi.texttools
 
 import kotlin.text.Regex
 

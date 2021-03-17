@@ -1,10 +1,8 @@
-package com.alexpi.texttools.textsplitter
+package com.alexpi.texttools
 
 import android.os.Bundle
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
-import com.alexpi.texttools.R
-import com.alexpi.texttools.base.BaseToolActivity
 import com.alexpi.texttools.databinding.ActivityTextSplitterBinding
 import com.alexpi.texttools.extension.collapse
 import com.alexpi.texttools.extension.expand
@@ -17,6 +15,8 @@ import java.util.regex.PatternSyntaxException
 class TextSplitterActivity : BaseToolActivity<ActivityTextSplitterBinding>() {
 
     override fun getViewBinding(): ActivityTextSplitterBinding  = ActivityTextSplitterBinding.inflate(layoutInflater)
+
+    override fun getResultString(): String = binding.resultLabel.text.toString()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +32,7 @@ class TextSplitterActivity : BaseToolActivity<ActivityTextSplitterBinding>() {
                         val delimiter = symbolEditText.text.toString()
                         if(delimiter.isEmpty()) symbolField.showError(getString(R.string.invalid_symbol))
                         else splitText(inputText,
-                        SymbolSeparator(delimiter), outputChar, charBeforeChunk, charAfterChunk)
+                                SymbolSeparator(delimiter), outputChar, charBeforeChunk, charAfterChunk)
                     }
                     R.id.regexRadioButton -> {
                         try {
