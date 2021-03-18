@@ -27,7 +27,9 @@ class MainActivity : AppCompatActivity() {
                 TextToolsAdapter(toolsList.toList()) { position ->
                     when (position) {
                         0 -> startActivity<TextSplitterActivity>()
+                        1 -> startActivity<TextJoinerActivity>()
                         2 -> startActivity<TextRepeaterActivity>()
+                        3 -> startActivity<TextReverserActivity>()
                     }
                 }
 
@@ -41,20 +43,5 @@ class MainActivity : AppCompatActivity() {
     private inline fun <reified T: AppCompatActivity> startActivity(){
         val intent = Intent(this, T::class.java)
         startActivity(intent)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.settings -> {
-                startActivity(Intent(this, SettingsActivity::class.java))
-                return true
-            }
-        }
-        return false
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.main_menu, menu)
-        return true
     }
 }

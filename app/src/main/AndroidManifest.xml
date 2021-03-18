@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TextTools">
-        <activity android:name=".TextSplitterActivity"></activity>
+        <activity android:name=".TextReverserActivity" />
+        <activity android:name=".TextJoinerActivity" />
+        <activity android:name=".TextSplitterActivity" />
         <activity android:name=".TextRepeaterActivity" />
-        <activity android:name=".SettingsActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

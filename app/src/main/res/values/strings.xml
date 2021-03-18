@@ -2,7 +2,7 @@
     <string name="app_name">Text Tools</string>
 
     <string name="input_text_title">Input text</string>
-    <string name="num_repetitions">Repetitions</string>
+    <string name="num_repetitions">Number of repetitions</string>
     <string name="repeat">Repeat</string>
     <string name="settings">Settings</string>
     <string name="clipboard_copied">Copied to clipboard</string>
@@ -23,30 +23,37 @@
     <string name="share">Share</string>
     <string name="copy">Copy</string>
 
-
     <string-array name="text_tools">
         <item>Split text</item>
         <item>Join text</item>
         <item>Repeat text</item>
+        <item>Reverse text</item>
     </string-array>
-    <string name="use_newline_character_as_separator">Use newline character as delimiter</string>
+    <string name="use_newline_char_as_separator">Use newline character as delimiter</string>
     <string name="use_custom_delimiter">Use custom delimiter</string>
     <string name="invalid_input_text">Invalid input text</string>
     <string name="invalid_output_text">Invalid output text</string>
     <string name="split_separator_options">Split separator options</string>
-    <string name="input_character">Input character</string>
+    <string name="input_char">Input character</string>
     <string name="use_symbol_for_splitting">Use symbol for splitting</string>
     <string name="use_regex_for_splitting">Use regex for splitting</string>
     <string name="regex">Regex</string>
     <string name="use_length_for_splitting">Use length for splitting</string>
     <string name="length">Length</string>
     <string name="split">Split</string>
-    <string name="output_character">Output character</string>
+    <string name="output_char">Output character</string>
     <string name="char_before_chunk">Character before chunk</string>
     <string name="char_after_chunk">Char after chunk</string>
     <string name="output_separator_options">Output separator options</string>
     <string name="invalid_symbol">Invalid symbol</string>
     <string name="invalid_regex">Invalid regular expression</string>
     <string name="invalid_length">Invalid length</string>
+    <string name="join_char">Join character</string>
+    <string name="join">Join</string>
+    <string name="input_character">Input character</string>
+    <string name="delete_blank_lines_title">Delete blank lines</string>
+    <string name="trim_lines_title">Trim lines</string>
+    <string name="reverse">Reverse</string>
+    <string name="line_by_line_mode_title">Line-by-line mode</string>
 
 </resources>

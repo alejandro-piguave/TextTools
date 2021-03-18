@@ -92,6 +92,5 @@ class TextSplitterActivity : BaseToolActivity<ActivityTextSplitterBinding>() {
                 binding.progressView.isVisible = false
             }
         }
-
     }
 }

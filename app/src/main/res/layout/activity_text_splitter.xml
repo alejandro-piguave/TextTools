@@ -72,7 +72,7 @@
                     android:id="@+id/symbolEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/input_character" />
+                    android:hint="@string/input_char" />
             </com.alexpi.texttools.custom.CustomTextField>
 
             <RadioButton
@@ -157,7 +157,7 @@
                     android:id="@+id/outputCharacterEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/output_character" />
+                    android:hint="@string/output_char" />
             </com.alexpi.texttools.custom.CustomTextField>
 
             <com.alexpi.texttools.custom.CustomTextField

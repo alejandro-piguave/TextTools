@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Text Tools</string>
     <string name="input_text_title">Texto de entrada</string>
-    <string name="num_repetitions">Repeticiones</string>
+    <string name="num_repetitions">Número de repeticiones</string>
     <string name="repeat">Repetir</string>
     <string name="settings">Opciones</string>
     <string name="clipboard_copied">Copiado al portapapeles</string>
@@ -27,25 +27,32 @@
         <item>Separar texto</item>
         <item>Unir texto</item>
         <item>Repetir texto</item>
+        <item>Invertir texto</item>
     </string-array>
-    <string name="use_newline_character_as_separator">Usar caracter de salto de línea como delimitador</string>
+    <string name="use_newline_char_as_separator">Usar caracter de salto de línea como delimitador</string>
     <string name="use_custom_delimiter">Usar delimitador propio</string>
     <string name="invalid_input_text">Texto de entrada inválido</string>
     <string name="invalid_output_text">Texto de salida inválido</string>
     <string name="split_separator_options">Opciones del separador de texto</string>
-    <string name="input_character">Caracter de entrada</string>
+    <string name="input_char">Caracter de entrada</string>
     <string name="use_symbol_for_splitting">Usar símbolo para separar</string>
     <string name="use_regex_for_splitting">Usar expresión regular para separar</string>
     <string name="regex">Expresión regular</string>
     <string name="use_length_for_splitting">Usar longitud para separar</string>
     <string name="length">Longitud</string>
     <string name="split">Separar</string>
-    <string name="output_character">Caracter de salida</string>
+    <string name="output_char">Caracter de salida</string>
     <string name="char_before_chunk">Caracter al principio del fragmento</string>
     <string name="char_after_chunk">Caracter al final del fragmento</string>
     <string name="output_separator_options">Opciones del separador de salida</string>
     <string name="invalid_symbol">Invalid symbol</string>
     <string name="invalid_regex">Expresión regular inválida</string>
     <string name="invalid_length">Longitud inválida</string>
+    <string name="join_char">Caracter de unión</string>
+    <string name="join">Unir</string>
+    <string name="delete_blank_lines_title">Eliminar líneas vacías</string>
+    <string name="trim_lines_title">Recortar espacios en cada línea</string>
+    <string name="reverse">Invertir</string>
+    <string name="line_by_line_mode_title">Modo línea por línea</string>
 
 </resources>
