@@ -29,6 +29,7 @@
         <item>Repeat text</item>
         <item>Reverse text</item>
         <item>Truncate text</item>
+        <item>Trim text</item>
     </string-array>
     <string name="use_newline_char_as_separator">Use newline character as delimiter</string>
     <string name="delimiter_title">Delimiter</string>
@@ -69,5 +70,9 @@
     <string name="input_char_separator_helper_text">Character that will be used to break text into parts.</string>
     <string name="input_regex_separator_helper_text">Regular expression that will be used to break text into parts.</string>
     <string name="input_length_separator_helper_text">Number of characters that will be put in each output chunk.</string>
+    <string name="left_side_trimming_title">Left-side trimming</string>
+    <string name="right_side_trimming_title">Right-side trimming</string>
+    <string name="line_by_line_trimming">Line-by-line trimming</string>
+    <string name="trim">Trim</string>
 
 </resources>

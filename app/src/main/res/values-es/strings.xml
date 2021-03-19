@@ -28,6 +28,7 @@
         <item>Repetir texto</item>
         <item>Invertir texto</item>
         <item>Truncar texto</item>
+        <item>Recortar texto</item>
     </string-array>
     <string name="use_newline_char_as_separator">Usar caracter de salto de línea como delimitador</string>
     <string name="delimiter_title">Delimitador</string>
@@ -68,5 +69,9 @@
     <string name="input_char_separator_helper_text">Caracter que se usará para dividir el texto en fragmentos.</string>
     <string name="input_regex_separator_helper_text">Expresión regular que se usará para divir el texto en fragmentos.</string>
     <string name="input_length_separator_helper_text">Número de caracteres que se pondrá en cada fragmento de salida.</string>
+    <string name="left_side_trimming_title">Recortar por la izquierda</string>
+    <string name="right_side_trimming_title">Recortar por la derecha</string>
+    <string name="line_by_line_trimming">Recortar línea por línea</string>
+    <string name="trim">Recortar</string>
 
 </resources>

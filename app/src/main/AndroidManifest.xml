@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TextTools">
-        <activity android:name=".TruncateTextActivity"></activity>
+        <activity android:name=".TrimTextActivity"></activity>
+        <activity android:name=".TruncateTextActivity" />
         <activity android:name=".ReverseTextActivity" />
         <activity android:name=".JoinTextActivity" />
         <activity android:name=".SplitTextActivity" />

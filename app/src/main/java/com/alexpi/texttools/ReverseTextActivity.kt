@@ -14,8 +14,7 @@ class ReverseTextActivity : BaseToolActivity<ActivityReverseTextBinding>() {
 
     override fun getResultString(): String = binding.resultLabel.text.toString()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun setUp() {
         with(binding){
             reverseButton.setOnClickListener {
                 val inputText = inputEditText.text.toString()

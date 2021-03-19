@@ -2,11 +2,10 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    tools:context="com.alexpi.texttools.ReverseTextActivity">
+    tools:context="com.alexpi.texttools.TrimTextActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -29,16 +28,37 @@
                 android:hint="@string/input_text_title" />
         </com.alexpi.texttools.custom.CustomTextField>
 
-
         <CheckBox
-            android:id="@+id/lineByLineModeCheckbox"
+            android:id="@+id/leftSideTrimmingCheckbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@string/line_by_line_mode_title"
+            android:checked="true"
+            android:text="@string/left_side_trimming_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/inputField"/>
+
+        <CheckBox
+            android:id="@+id/righrSideTrimmingCheckbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:checked="true"
+            android:text="@string/right_side_trimming_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/leftSideTrimmingCheckbox"/>
+
+        <CheckBox
+            android:id="@+id/lineByLineTrimmingCheckbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/line_by_line_trimming"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/righrSideTrimmingCheckbox"/>
 
         <TextView
             android:id="@+id/resultLabel"
@@ -48,7 +68,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/reverseButton"
+            app:layout_constraintTop_toBottomOf="@id/trimButton"
             android:gravity="top" />
 
         <ProgressBar
@@ -59,20 +79,20 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/reverseButton" />
+            app:layout_constraintTop_toBottomOf="@id/trimButton" />
 
 
         <Button
-            android:id="@+id/reverseButton"
+            android:id="@+id/trimButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:padding="16dp"
-            android:text="@string/reverse"
+            android:text="@string/trim"
             android:textColor="@android:color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/lineByLineModeCheckbox" />
+            app:layout_constraintTop_toBottomOf="@id/lineByLineTrimmingCheckbox" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

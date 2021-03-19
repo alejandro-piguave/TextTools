@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
                         2 -> startToolActivity<RepeatTextActivity>(toolName)
                         3 -> startToolActivity<ReverseTextActivity>(toolName)
                         4 -> startToolActivity<TruncateTextActivity>(toolName)
+                        5 -> startToolActivity<TrimTextActivity>(toolName)
                     }
                 }
 

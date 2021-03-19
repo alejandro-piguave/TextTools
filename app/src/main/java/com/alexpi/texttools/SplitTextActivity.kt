@@ -17,9 +17,7 @@ class SplitTextActivity : BaseToolActivity<ActivitySplitTextBinding>() {
     override fun getViewBinding(): ActivitySplitTextBinding  = ActivitySplitTextBinding.inflate(layoutInflater)
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
+    override fun setUp(){
         with(binding){
             splitButton.setOnClickListener {
                 val inputText = inputEditText.text.toString()

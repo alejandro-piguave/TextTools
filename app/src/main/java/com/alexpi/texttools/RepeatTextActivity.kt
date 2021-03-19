@@ -15,9 +15,7 @@ class RepeatTextActivity  : BaseToolActivity<ActivityRepeatTextBinding>() {
 
     override fun getViewBinding(): ActivityRepeatTextBinding  = ActivityRepeatTextBinding.inflate(layoutInflater)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
+    override fun setUp() {
         shakeAnimation = AnimationUtils.loadAnimation(this, R.anim.shake_it)
         with(binding){
             repeatButton.setOnClickListener {

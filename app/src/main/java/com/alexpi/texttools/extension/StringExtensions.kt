@@ -25,3 +25,8 @@ fun String.insertPeriodically(insert: String, period: Int): String {
 fun String.takeAndAddSuffix(n: Int, suffix: String): String =  this.take(n - suffix.length) + suffix
 
 fun String.takeLastAndAddPrefix(n: Int, prefix: String): String = prefix + this.takeLast(n - prefix.length)
+
+fun String.trim(trimStart: Boolean, trimEnd: Boolean) =
+    if(trimStart && trimEnd) this.trim()
+    else if(trimStart && !trimEnd) this.trimStart()
+    else if(trimEnd && !trimStart) trimEnd() else this

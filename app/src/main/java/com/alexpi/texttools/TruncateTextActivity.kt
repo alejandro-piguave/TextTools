@@ -11,10 +11,8 @@ import kotlinx.coroutines.withContext
 
 class TruncateTextActivity : BaseToolActivity<ActivityTruncateTextBinding>() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun setUp() {
         with(binding){
-
             truncateButton.setOnClickListener {
                 val truncationLength = truncationLengthEditText.text.toString().toIntOrNull() ?: -1
                 val truncationIndicator = if(addTruncationIndicatorCheckbox.isChecked) delimiterEditText.text.toString() else ""

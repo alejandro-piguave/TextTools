@@ -29,7 +29,10 @@ abstract class BaseToolActivity<B: ViewBinding>: AppCompatActivity() {
         val toolName = intent.getStringExtra(EXTRA_TOOL_NAME)
         supportActionBar?.title = toolName
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        setUp()
     }
+
+    open fun setUp(){}
 
     abstract fun getViewBinding(): B
     abstract fun getResultString(): String
