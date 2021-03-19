@@ -3,12 +3,12 @@ package com.alexpi.texttools
 import android.os.Bundle
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
-import com.alexpi.texttools.databinding.ActivityTextJoinerBinding
+import com.alexpi.texttools.databinding.ActivityJoinTextBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class TextJoinerActivity : BaseToolActivity<ActivityTextJoinerBinding>() {
+class JoinTextActivity : BaseToolActivity<ActivityJoinTextBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         with(binding){
@@ -22,7 +22,7 @@ class TextJoinerActivity : BaseToolActivity<ActivityTextJoinerBinding>() {
         }
     }
 
-    override fun getViewBinding(): ActivityTextJoinerBinding = ActivityTextJoinerBinding.inflate(layoutInflater)
+    override fun getViewBinding(): ActivityJoinTextBinding = ActivityJoinTextBinding.inflate(layoutInflater)
 
     override fun getResultString(): String = binding.resultLabel.text.toString()
 

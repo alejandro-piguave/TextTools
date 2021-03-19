@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Text Tools</string>
+    <string name="app_name">Herramientas de texto</string>
     <string name="input_text_title">Texto de entrada</string>
     <string name="num_repetitions">Número de repeticiones</string>
     <string name="repeat">Repetir</string>
@@ -13,7 +13,6 @@
 
     <string name="auto_trim_title">Recortar texto</string>
     <string name="auto_trim_summary">Elimina automáticamente los espacios en blanco iniciales y finales de tu texto.</string>
-
 
     <string name="repetitions_limit_title">Límite de repeticiones</string>
     <string name="repetitions_limit_summary">Previene el uso de un número de repeticiones muy alto estableciendo el límite en 9999</string>
@@ -28,14 +27,15 @@
         <item>Unir texto</item>
         <item>Repetir texto</item>
         <item>Invertir texto</item>
+        <item>Truncar texto</item>
     </string-array>
     <string name="use_newline_char_as_separator">Usar caracter de salto de línea como delimitador</string>
-    <string name="use_custom_delimiter">Usar delimitador propio</string>
+    <string name="delimiter_title">Delimitador</string>
     <string name="invalid_input_text">Texto de entrada inválido</string>
     <string name="invalid_output_text">Texto de salida inválido</string>
     <string name="split_separator_options">Opciones del separador de texto</string>
     <string name="input_char">Caracter de entrada</string>
-    <string name="use_symbol_for_splitting">Usar símbolo para separar</string>
+    <string name="use_character_for_splitting">Usar caracter para separar</string>
     <string name="use_regex_for_splitting">Usar expresión regular para separar</string>
     <string name="regex">Expresión regular</string>
     <string name="use_length_for_splitting">Usar longitud para separar</string>
@@ -54,5 +54,19 @@
     <string name="trim_lines_title">Recortar espacios en cada línea</string>
     <string name="reverse">Invertir</string>
     <string name="line_by_line_mode_title">Modo línea por línea</string>
+    <string name="truncation_side_title">Tipo de truncado</string>
+    <string name="right_side_truncation_title">Truncar por la derecha</string>
+    <string name="left_side_truncation_title">Truncar por la izquierda</string>
+    <string name="length_and_lines_title">Longitud y líneas</string>
+    <string name="line_by_line_truncating">Truncar texto línea por línea</string>
+    <string name="suffix_and_prefix_title">Sufijo y prefijo</string>
+    <string name="add_truncation_indicator">Añadir sufijo o prefijo</string>
+    <string name="truncation_indicator">Sufijo o prefijo de truncado</string>
+    <string name="truncate">Truncar</string>
+    <string name="invalid_truncation_length">La longitud del prefijo/sufijo no puede ser mayor a la longitud de truncado</string>
+    <string name="output_separator_helper_text">Caracter que se colocará entre los fragmentos separados.</string>
+    <string name="input_char_separator_helper_text">Caracter que se usará para dividir el texto en fragmentos.</string>
+    <string name="input_regex_separator_helper_text">Expresión regular que se usará para divir el texto en fragmentos.</string>
+    <string name="input_length_separator_helper_text">Número de caracteres que se pondrá en cada fragmento de salida.</string>
 
 </resources>

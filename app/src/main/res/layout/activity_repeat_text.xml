@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    tools:context="com.alexpi.texttools.TextRepeaterActivity">
+    tools:context="com.alexpi.texttools.RepeatTextActivity">
 
     <com.alexpi.texttools.custom.CustomTextField
         android:id="@+id/inputField"
@@ -41,21 +41,9 @@
             android:id="@+id/repetitionsInputText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="5"
             android:hint="@string/num_repetitions"
             android:inputType="number" />
     </com.alexpi.texttools.custom.CustomTextField>
-
-    <CheckBox
-        android:id="@+id/customDelimiterCheckbox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:checked="true"
-        android:text="@string/use_newline_char_as_separator"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/repetitionsField"/>
 
 
     <com.alexpi.texttools.custom.CustomTextField
@@ -63,21 +51,18 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:visibility="gone"
+        android:layout_marginTop="8dp"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/customDelimiterCheckbox">
+        app:layout_constraintTop_toBottomOf="@id/repetitionsField">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/delimiterInputText"
+            android:id="@+id/delimiterEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:ems="5"
-            android:enabled="false"
-            android:hint="@string/use_custom_delimiter"/>
+            android:layout_marginTop="8dp"
+            android:hint="@string/delimiter_title" />
     </com.alexpi.texttools.custom.CustomTextField>
 
     <androidx.core.widget.NestedScrollView
@@ -109,7 +94,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/repeatButton" />
-
 
     <Button
         android:id="@+id/repeatButton"

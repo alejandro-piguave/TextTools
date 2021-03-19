@@ -1,8 +1,8 @@
 package com.alexpi.texttools
 
+import com.alexpi.texttools.extension.takeAndAddSuffix
+import com.alexpi.texttools.extension.takeLastAndAddPrefix
 import org.junit.Test
-
-import org.junit.Assert.*
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -11,7 +11,15 @@ import org.junit.Assert.*
  */
 class ExampleUnitTest {
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun `takeAndReplaceRangeWithSuffix function works correctly`() {
+        val a  = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae dui quam."
+        val truncatedA = a.takeAndAddSuffix(20,"...")
+        assert(truncatedA == "Lorem ipsum dolor...")
+    }
+    @Test
+    fun `takeLastAndReplaceRangeWithAffix function works correctly`() {
+        val a  = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae dui quam."
+        val truncatedA = a.takeLastAndAddPrefix(10,"...")
+        assert(truncatedA == "...i quam.")
     }
 }

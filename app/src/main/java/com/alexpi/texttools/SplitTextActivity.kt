@@ -3,7 +3,7 @@ package com.alexpi.texttools
 import android.os.Bundle
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
-import com.alexpi.texttools.databinding.ActivityTextSplitterBinding
+import com.alexpi.texttools.databinding.ActivitySplitTextBinding
 import com.alexpi.texttools.extension.collapse
 import com.alexpi.texttools.extension.expand
 import com.alexpi.texttools.extension.insertPeriodically
@@ -12,11 +12,10 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.util.regex.PatternSyntaxException
 
-class TextSplitterActivity : BaseToolActivity<ActivityTextSplitterBinding>() {
+class SplitTextActivity : BaseToolActivity<ActivitySplitTextBinding>() {
 
-    override fun getViewBinding(): ActivityTextSplitterBinding  = ActivityTextSplitterBinding.inflate(layoutInflater)
+    override fun getViewBinding(): ActivitySplitTextBinding  = ActivitySplitTextBinding.inflate(layoutInflater)
 
-    override fun getResultString(): String = binding.resultLabel.text.toString()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +23,8 @@ class TextSplitterActivity : BaseToolActivity<ActivityTextSplitterBinding>() {
         with(binding){
             splitButton.setOnClickListener {
                 val inputText = inputEditText.text.toString()
-                val outputChar = if(outputCharacterEditText.text.toString().isEmpty()) "\n" else outputCharacterEditText.text.toString()
+                val out = outputCharacterEditText.text.toString()
+                val outputChar = if(out == "\\n") "\n" else out
                 val charBeforeChunk = charBeforeChunkEditText.text.toString()
                 val charAfterChunk = charAfterChunkEditText.text.toString()
                 when(splitSeparatorOptionsRadioGroup.checkedRadioButtonId){
@@ -77,6 +77,7 @@ class TextSplitterActivity : BaseToolActivity<ActivityTextSplitterBinding>() {
     }
 
 
+
     private fun splitText(inputText: String, splitSeparator: SplitSeparator, outputChar: String, charBeforeChunk: String, charAfterChunk: String){
         binding.progressView.isVisible = true
         lifecycleScope.launch(Dispatchers.Default) {
@@ -93,4 +94,6 @@ class TextSplitterActivity : BaseToolActivity<ActivityTextSplitterBinding>() {
             }
         }
     }
+
+    override fun getResultString(): String = binding.resultLabel.text.toString()
 }

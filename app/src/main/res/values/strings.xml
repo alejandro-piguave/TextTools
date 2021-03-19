@@ -28,14 +28,15 @@
         <item>Join text</item>
         <item>Repeat text</item>
         <item>Reverse text</item>
+        <item>Truncate text</item>
     </string-array>
     <string name="use_newline_char_as_separator">Use newline character as delimiter</string>
-    <string name="use_custom_delimiter">Use custom delimiter</string>
+    <string name="delimiter_title">Delimiter</string>
     <string name="invalid_input_text">Invalid input text</string>
     <string name="invalid_output_text">Invalid output text</string>
     <string name="split_separator_options">Split separator options</string>
     <string name="input_char">Input character</string>
-    <string name="use_symbol_for_splitting">Use symbol for splitting</string>
+    <string name="use_character_for_splitting">Use character for splitting</string>
     <string name="use_regex_for_splitting">Use regex for splitting</string>
     <string name="regex">Regex</string>
     <string name="use_length_for_splitting">Use length for splitting</string>
@@ -50,10 +51,23 @@
     <string name="invalid_length">Invalid length</string>
     <string name="join_char">Join character</string>
     <string name="join">Join</string>
-    <string name="input_character">Input character</string>
     <string name="delete_blank_lines_title">Delete blank lines</string>
     <string name="trim_lines_title">Trim lines</string>
     <string name="reverse">Reverse</string>
     <string name="line_by_line_mode_title">Line-by-line mode</string>
+    <string name="truncation_side_title">Truncation side</string>
+    <string name="right_side_truncation_title">Right-side truncation</string>
+    <string name="left_side_truncation_title">Left-side truncation</string>
+    <string name="length_and_lines_title">Length and lines</string>
+    <string name="line_by_line_truncating">Truncate text line-by-line</string>
+    <string name="suffix_and_prefix_title">Suffix and prefix</string>
+    <string name="add_truncation_indicator">Add truncation suffix or prefix</string>
+    <string name="truncation_indicator">Truncation suffix or prefix</string>
+    <string name="truncate">Truncate</string>
+    <string name="invalid_truncation_length">Prefix/suffix length can\'t be greater than truncation length</string>
+    <string name="output_separator_helper_text">Character that will be put between the split chunks.</string>
+    <string name="input_char_separator_helper_text">Character that will be used to break text into parts.</string>
+    <string name="input_regex_separator_helper_text">Regular expression that will be used to break text into parts.</string>
+    <string name="input_length_separator_helper_text">Number of characters that will be put in each output chunk.</string>
 
 </resources>

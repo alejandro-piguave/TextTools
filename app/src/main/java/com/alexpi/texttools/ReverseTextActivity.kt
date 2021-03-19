@@ -3,14 +3,14 @@ package com.alexpi.texttools
 import android.os.Bundle
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
-import com.alexpi.texttools.databinding.ActivityTextReverserBinding
+import com.alexpi.texttools.databinding.ActivityReverseTextBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class TextReverserActivity : BaseToolActivity<ActivityTextReverserBinding>() {
+class ReverseTextActivity : BaseToolActivity<ActivityReverseTextBinding>() {
 
-    override fun getViewBinding(): ActivityTextReverserBinding = ActivityTextReverserBinding.inflate(layoutInflater)
+    override fun getViewBinding(): ActivityReverseTextBinding = ActivityReverseTextBinding.inflate(layoutInflater)
 
     override fun getResultString(): String = binding.resultLabel.text.toString()
 

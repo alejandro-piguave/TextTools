@@ -14,10 +14,14 @@ fun String.insertPeriodically(insert: String, period: Int): String {
         builder.append(
             this.substring(
                 index,
-                Math.min(index + period, this.length)
+                kotlin.math.min(index + period, this.length)
             )
         )
         index += period
     }
     return builder.toString()
 }
+
+fun String.takeAndAddSuffix(n: Int, suffix: String): String =  this.take(n - suffix.length) + suffix
+
+fun String.takeLastAndAddPrefix(n: Int, prefix: String): String = prefix + this.takeLast(n - prefix.length)
