@@ -62,7 +62,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:hint="@string/delimiter_title" />
+            android:hint="@string/delimiter_title"
+            android:text="\\n"/>
     </com.alexpi.texttools.custom.CustomTextField>
 
     <androidx.core.widget.NestedScrollView

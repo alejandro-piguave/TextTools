@@ -51,7 +51,9 @@ class ToolActivity : AppCompatActivity() {
             5 -> TrimTextFragment()
             6 -> AddLeftPaddingFragment()
             7 -> AddRightPaddingFragment()
-            else -> AddPrefixFragment()
+            8 -> AddPrefixFragment()
+            9 -> AddSuffixFragment()
+            else -> RemoveEmptyLinesFragment()
         }
 
 

@@ -34,6 +34,7 @@
         <item>Add right padding</item>
         <item>Add prefix</item>
         <item>Add suffix</item>
+        <item>Remove empty lines</item>
     </string-array>
     <string name="use_newline_char_as_separator">Use newline character as delimiter</string>
     <string name="delimiter_title">Delimiter</string>
@@ -89,5 +90,6 @@
     <string name="prefix_text">Prefix text</string>
     <string name="suffix_text">Suffix text</string>
     <string name="add_suffix">Add suffix</string>
+    <string name="remove_empty_lines">Remove empty lines</string>
 
 </resources>

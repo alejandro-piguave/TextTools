@@ -22,9 +22,11 @@ fun String.trim(trimStart: Boolean, trimEnd: Boolean) =
     else if(trimStart && !trimEnd) this.trimStart()
     else if(trimEnd && !trimStart) trimEnd() else this
 
-fun String.lineByLineTransform(transform: ((String) -> CharSequence)) =  this.split("\n").joinToString(separator = "\n") { transform.invoke(it)}
+fun String.lineByLineFilter(filter: ((String) -> Boolean)) =  this.split("\n").filter(filter).joinToString(separator = "\n")
 
-fun String.paragraphTransform(transform: ((String) -> CharSequence)) =  this.split("\n\n").joinToString(separator = "\n\n") { transform.invoke(it)}
+fun String.lineByLineTransform(transform: ((String) -> CharSequence)) =  this.split("\n").joinToString(separator = "\n", transform = transform)
+
+fun String.paragraphTransform(transform: ((String) -> CharSequence)) =  this.split("\n\n").joinToString(separator = "\n\n", transform = transform)
 
 fun String.repeatUntilLength(length: Int): String{
     val builder: StringBuilder = StringBuilder(length)
