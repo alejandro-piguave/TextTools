@@ -1,8 +1,11 @@
 package com.alexpi.texttools.extension
 
+import android.R.attr.key
+
+
 fun String.insertPeriodically(insert: String, period: Int): String {
     val builder = StringBuilder(
-        this.length + insert.length * (this.length / period) + 1
+            this.length + insert.length * (this.length / period) + 1
     )
     var index = 0
     var prefix = ""
@@ -12,10 +15,10 @@ fun String.insertPeriodically(insert: String, period: Int): String {
         builder.append(prefix)
         prefix = insert
         builder.append(
-            this.substring(
-                index,
-                kotlin.math.min(index + period, this.length)
-            )
+                this.substring(
+                        index,
+                        kotlin.math.min(index + period, this.length)
+                )
         )
         index += period
     }
@@ -30,3 +33,20 @@ fun String.trim(trimStart: Boolean, trimEnd: Boolean) =
     if(trimStart && trimEnd) this.trim()
     else if(trimStart && !trimEnd) this.trimStart()
     else if(trimEnd && !trimStart) trimEnd() else this
+
+fun String.lineByLineTransform(separator: String = "\n", transform: ((String) -> CharSequence)) =  this.split(separator).joinToString(separator = separator) { transform.invoke(it)}
+
+fun String.repeatUntilLength(length: Int): String{
+    val builder: StringBuilder = StringBuilder(length)
+    while (builder.length < length) {
+        builder.append(this)
+    }
+    builder.setLength(length)
+    return builder.toString()
+}
+
+fun String.padStart(length: Int, padString: String = " "): String {
+    if (length < 0) throw IllegalArgumentException("Desired length $length is less than zero.")
+    return if (length <= this.length) this
+    else this + padString.repeatUntilLength(length - this.length)
+}

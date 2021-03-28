@@ -64,8 +64,7 @@ class TruncateTextActivity : BaseToolActivity<ActivityTruncateTextBinding>() {
         binding.progressView.isVisible = true
         lifecycleScope.launch(Dispatchers.Default) {
             val resultText = when {
-                lineByLineTruncation -> inputText.split("\n")
-                    .joinToString(separator = "\n") {
+                lineByLineTruncation -> inputText.lineByLineTransform{
                         if(isLeftTruncation) it.takeLastAndAddPrefix(truncationLength, truncationIndicator)
                         else it.takeAndAddSuffix(truncationLength, truncationIndicator)
                     }

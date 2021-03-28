@@ -74,5 +74,8 @@
     <string name="right_side_trimming_title">Right-side trimming</string>
     <string name="line_by_line_trimming">Line-by-line trimming</string>
     <string name="trim">Trim</string>
+    <string name="padding_char">Padding character</string>
+    <string name="add_left_padding">Add left padding</string>
+    <string name="line_by_line_padding">Line-by-line padding</string>
 
 </resources>

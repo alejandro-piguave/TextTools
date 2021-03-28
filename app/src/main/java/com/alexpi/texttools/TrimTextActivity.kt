@@ -3,6 +3,7 @@ package com.alexpi.texttools
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.alexpi.texttools.databinding.ActivityTrimTextBinding
+import com.alexpi.texttools.extension.lineByLineTransform
 import com.alexpi.texttools.extension.trim
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -25,8 +26,7 @@ class TrimTextActivity : BaseToolActivity<ActivityTrimTextBinding>() {
     private fun trimText(inputText: String, leftSideTrimming: Boolean, rightSideTrimming: Boolean, lineByLineTrimming: Boolean){
         binding.progressView.isVisible = true
         lifecycleScope.launch(Dispatchers.Default) {
-            val resultText = if(lineByLineTrimming) inputText.split("\n")
-                .joinToString(separator = "\n") {
+            val resultText = if(lineByLineTrimming) inputText.lineByLineTransform{
                     it.trim(leftSideTrimming, rightSideTrimming)
                 } else inputText.trim(leftSideTrimming, rightSideTrimming)
 

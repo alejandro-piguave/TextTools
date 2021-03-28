@@ -11,12 +11,11 @@
         android:id="@+id/toolCard"
         android:layout_margin="4dp"
         app:cardElevation="4dp"
-        app:cardCornerRadius="4dp"
+        app:cardCornerRadius="8dp"
         android:foreground="?android:attr/selectableItemBackground"
         android:clickable="true"
         android:focusable="true"
-        app:cardBackgroundColor="?attr/colorPrimary"
-        >
+        app:cardBackgroundColor="?attr/colorPrimary">
         <TextView
             android:id="@+id/toolName"
             android:layout_gravity="center"
