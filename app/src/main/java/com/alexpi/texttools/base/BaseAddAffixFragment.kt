@@ -14,6 +14,11 @@ import kotlinx.coroutines.withContext
 
 abstract class BaseAddAffixFragment : BaseToolFragment<FragmentAddAffixBinding>() {
 
+    abstract val affixEditTextHintId: Int
+    abstract val addAffixButtonTextId: Int
+
+    abstract fun addAffix(inputText: String, affix: String): String
+
     override fun setUp() {
         with(binding){
             lineByLineModeRadioButton.setOnCheckedChangeListener { _, isChecked ->
@@ -35,11 +40,6 @@ abstract class BaseAddAffixFragment : BaseToolFragment<FragmentAddAffixBinding>(
             }
         }
     }
-
-    abstract val affixEditTextHintId: Int
-    abstract val addAffixButtonTextId: Int
-
-    abstract fun addAffix(inputText: String, affix: String): String
 
     private fun addAffix(inputText: String, affixText: String, affixMode: AffixMode, skipEmptyLines: Boolean){
         binding.progressView.isVisible = true
