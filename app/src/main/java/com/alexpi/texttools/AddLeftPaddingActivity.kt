@@ -2,14 +2,14 @@ package com.alexpi.texttools
 
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
-import com.alexpi.texttools.databinding.ActivityLeftPadTextBinding
+import com.alexpi.texttools.databinding.ActivityAddLeftPaddingBinding
 import com.alexpi.texttools.extension.lineByLineTransform
 import com.alexpi.texttools.extension.padStart
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class LeftPaddingTextActivity : BaseToolActivity<ActivityLeftPadTextBinding>() {
+class AddLeftPaddingActivity : BaseToolActivity<ActivityAddLeftPaddingBinding>() {
     override fun setUp() {
         with(binding){
             addLeftPaddingButton.setOnClickListener {
@@ -40,7 +40,7 @@ class LeftPaddingTextActivity : BaseToolActivity<ActivityLeftPadTextBinding>() {
         }
     }
 
-    override fun getViewBinding(): ActivityLeftPadTextBinding = ActivityLeftPadTextBinding.inflate(layoutInflater)
+    override fun getViewBinding(): ActivityAddLeftPaddingBinding = ActivityAddLeftPaddingBinding.inflate(layoutInflater)
 
     override fun getResultString(): String  = binding.resultLabel.text.toString()
 }

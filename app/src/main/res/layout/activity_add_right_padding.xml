@@ -10,9 +10,9 @@
 
     <com.alexpi.texttools.custom.CustomTextField
         android:id="@+id/inputField"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +47,7 @@
 
 
     <com.alexpi.texttools.custom.CustomTextField
-        android:id="@+id/leftPaddingCharField"
+        android:id="@+id/rightPaddingCharField"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
         app:layout_constraintTop_toBottomOf="@id/textLengthField">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/leftPaddingCharEditText"
+            android:id="@+id/rightPaddingCharEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -73,7 +73,7 @@
         android:text="@string/line_by_line_padding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/leftPaddingCharField"/>
+        app:layout_constraintTop_toBottomOf="@+id/rightPaddingCharField" />
 
 
     <androidx.core.widget.NestedScrollView
@@ -86,7 +86,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addLeftPaddingButton">
+        app:layout_constraintTop_toBottomOf="@id/addRightPaddingButton">
 
 
         <TextView
@@ -104,21 +104,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addLeftPaddingButton" />
+        app:layout_constraintTop_toBottomOf="@id/addRightPaddingButton" />
 
     <Button
-        android:id="@+id/addLeftPaddingButton"
+        android:id="@+id/addRightPaddingButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:padding="16dp"
         android:layout_marginBottom="16dp"
+        android:padding="16dp"
         android:text="@string/add_left_padding"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@id/nestedScrollView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lineByLinePaddingCheckbox" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,6 +29,8 @@
         <item>Invertir texto</item>
         <item>Truncar texto</item>
         <item>Recortar texto</item>
+        <item>Añadir relleno por la izquierda</item>
+        <item>Añadir relleno por la derecha</item>
     </string-array>
     <string name="use_newline_char_as_separator">Usar caracter de salto de línea como delimitador</string>
     <string name="delimiter_title">Delimitador</string>
@@ -76,5 +78,6 @@
     <string name="padding_char">Caracter de relleno</string>
     <string name="add_left_padding">Añadir relleno por la izquierda</string>
     <string name="line_by_line_padding">Rellenar línea por línea</string>
+    <string name="add_right_padding">Añadir relleno por la derecha</string>
 
 </resources>

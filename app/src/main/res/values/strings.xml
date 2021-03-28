@@ -30,6 +30,8 @@
         <item>Reverse text</item>
         <item>Truncate text</item>
         <item>Trim text</item>
+        <item>Add left padding</item>
+        <item>Add right padding</item>
     </string-array>
     <string name="use_newline_char_as_separator">Use newline character as delimiter</string>
     <string name="delimiter_title">Delimiter</string>
@@ -77,5 +79,6 @@
     <string name="padding_char">Padding character</string>
     <string name="add_left_padding">Add left padding</string>
     <string name="line_by_line_padding">Line-by-line padding</string>
+    <string name="add_right_padding">Add right padding</string>
 
 </resources>

@@ -31,6 +31,8 @@ class MainActivity : AppCompatActivity() {
                         3 -> startToolActivity<ReverseTextActivity>(toolName)
                         4 -> startToolActivity<TruncateTextActivity>(toolName)
                         5 -> startToolActivity<TrimTextActivity>(toolName)
+                        6 -> startToolActivity<AddLeftPaddingActivity>(toolName)
+                        7 -> startToolActivity<AddRightPaddingActivity>(toolName)
                     }
                 }
 

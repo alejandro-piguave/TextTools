@@ -1,25 +1,13 @@
 package com.alexpi.texttools.extension
 
-import android.R.attr.key
-
-
 fun String.insertPeriodically(insert: String, period: Int): String {
-    val builder = StringBuilder(
-            this.length + insert.length * (this.length / period) + 1
-    )
+    val builder = StringBuilder(this.length + insert.length * (this.length / period) + 1)
     var index = 0
     var prefix = ""
     while (index < this.length) {
-        // Don't put the insert in the very first iteration.
-        // This is easier than appending it *after* each substring
         builder.append(prefix)
         prefix = insert
-        builder.append(
-                this.substring(
-                        index,
-                        kotlin.math.min(index + period, this.length)
-                )
-        )
+        builder.append(this.substring(index, kotlin.math.min(index + period, this.length)))
         index += period
     }
     return builder.toString()
@@ -48,5 +36,11 @@ fun String.repeatUntilLength(length: Int): String{
 fun String.padStart(length: Int, padString: String = " "): String {
     if (length < 0) throw IllegalArgumentException("Desired length $length is less than zero.")
     return if (length <= this.length) this
-    else this + padString.repeatUntilLength(length - this.length)
+    else padString.repeatUntilLength(length - this.length) + this
+}
+
+fun String.padEnd(length: Int, padString: String = " "): String {
+    if (length < 0) throw IllegalArgumentException("Desired length $length is less than zero.")
+    return if (length <= this.length) this
+    else this +  padString.repeatUntilLength(length - this.length)
 }
