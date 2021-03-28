@@ -2,10 +2,11 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    tools:context="com.alexpi.texttools.TrimTextActivity">
+    tools:context="com.alexpi.texttools.fragment.RepeatTextFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -28,37 +29,61 @@
                 android:hint="@string/input_text_title" />
         </com.alexpi.texttools.custom.CustomTextField>
 
-        <CheckBox
-            android:id="@+id/leftSideTrimmingCheckbox"
+        <com.alexpi.texttools.custom.CustomTextField
+            android:id="@+id/prefixField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:checked="true"
-            android:text="@string/left_side_trimming_title"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/inputField"/>
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
-        <CheckBox
-            android:id="@+id/righrSideTrimmingCheckbox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:checked="true"
-            android:text="@string/right_side_trimming_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/leftSideTrimmingCheckbox"/>
+            app:layout_constraintTop_toBottomOf="@+id/inputField">
 
-        <CheckBox
-            android:id="@+id/lineByLineTrimmingCheckbox"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/prefixEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prefix_text" />
+        </com.alexpi.texttools.custom.CustomTextField>
+
+        <RadioGroup
+            android:id="@+id/textPrefixModeRadioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/line_by_line_trimming"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/righrSideTrimmingCheckbox"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/prefixField">
+
+            <RadioButton
+                android:id="@+id/singleLineModeRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/single_line_mode_title"/>
+
+            <RadioButton
+                android:id="@+id/lineByLineModeRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/line_by_line_mode_title"/>
+
+            <CheckBox
+                android:id="@+id/skipEmptyLinesCheckbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/skip_empty_lines"
+                android:visibility="visible"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp" />
+
+            <RadioButton
+                android:id="@+id/paragraphModeRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/paragraph_mode_title"/>
+
+        </RadioGroup>
 
         <TextView
             android:id="@+id/resultLabel"
@@ -68,7 +93,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/trimButton"
+            app:layout_constraintTop_toBottomOf="@id/addPrefixButton"
             android:gravity="top" />
 
         <ProgressBar
@@ -79,20 +104,20 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/trimButton" />
+            app:layout_constraintTop_toBottomOf="@id/addPrefixButton" />
 
 
         <Button
-            android:id="@+id/trimButton"
+            android:id="@+id/addPrefixButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:padding="16dp"
-            android:text="@string/trim"
+            android:text="@string/split"
             android:textColor="@android:color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/lineByLineTrimmingCheckbox" />
+            app:layout_constraintTop_toBottomOf="@id/textPrefixModeRadioGroup" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

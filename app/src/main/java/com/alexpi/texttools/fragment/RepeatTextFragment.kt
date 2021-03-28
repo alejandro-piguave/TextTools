@@ -1,22 +1,24 @@
-package com.alexpi.texttools
+package com.alexpi.texttools.fragment
 
-import android.os.Bundle
+import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
-import com.alexpi.texttools.databinding.ActivityRepeatTextBinding
+import com.alexpi.texttools.R
+import com.alexpi.texttools.base.BaseToolFragment
+import com.alexpi.texttools.databinding.FragmentRepeatTextBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class RepeatTextActivity  : BaseToolActivity<ActivityRepeatTextBinding>() {
+class RepeatTextFragment  : BaseToolFragment<FragmentRepeatTextBinding>() {
     private lateinit var shakeAnimation: Animation
 
-    override fun getViewBinding(): ActivityRepeatTextBinding  = ActivityRepeatTextBinding.inflate(layoutInflater)
+    override fun getViewBinding(container: ViewGroup?): FragmentRepeatTextBinding  = FragmentRepeatTextBinding.inflate(layoutInflater, container, false)
 
     override fun setUp() {
-        shakeAnimation = AnimationUtils.loadAnimation(this, R.anim.shake_it)
+        shakeAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.shake_it)
         with(binding){
             repeatButton.setOnClickListener {
                 val num = repetitionsInputText.text.toString().toIntOrNull() ?: -1

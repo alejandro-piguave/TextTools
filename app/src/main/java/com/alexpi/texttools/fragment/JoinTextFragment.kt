@@ -1,13 +1,15 @@
-package com.alexpi.texttools
+package com.alexpi.texttools.fragment
 
+import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
-import com.alexpi.texttools.databinding.ActivityJoinTextBinding
+import com.alexpi.texttools.base.BaseToolFragment
+import com.alexpi.texttools.databinding.FragmentJoinTextBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class JoinTextActivity : BaseToolActivity<ActivityJoinTextBinding>() {
+class JoinTextFragment : BaseToolFragment<FragmentJoinTextBinding>() {
     override fun setUp() {
         with(binding){
             joinButton.setOnClickListener {
@@ -20,10 +22,7 @@ class JoinTextActivity : BaseToolActivity<ActivityJoinTextBinding>() {
         }
     }
 
-    override fun getViewBinding(): ActivityJoinTextBinding = ActivityJoinTextBinding.inflate(layoutInflater)
-
     override fun getResultString(): String = binding.resultLabel.text.toString()
-
 
     private fun joinText(inputText: String, joinChar: String, deleteBlankLines: Boolean, trimLines: Boolean) {
         binding.progressView.isVisible = true
@@ -41,4 +40,6 @@ class JoinTextActivity : BaseToolActivity<ActivityJoinTextBinding>() {
             }
         }
     }
+
+    override fun getViewBinding(container: ViewGroup?): FragmentJoinTextBinding = FragmentJoinTextBinding.inflate(layoutInflater, container, false)
 }

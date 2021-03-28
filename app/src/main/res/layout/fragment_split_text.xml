@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    tools:context="com.alexpi.texttools.RepeatTextActivity">
+    tools:context="com.alexpi.texttools.fragment.RepeatTextFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -69,7 +69,8 @@
                     android:id="@+id/symbolEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/input_char" />
+                    android:hint="@string/input_char"
+                    android:text="\\n"/>
             </com.alexpi.texttools.custom.CustomTextField>
 
             <RadioButton

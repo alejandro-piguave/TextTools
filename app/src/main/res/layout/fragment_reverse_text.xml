@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    tools:context="com.alexpi.texttools.JoinTextActivity">
+    tools:context="com.alexpi.texttools.fragment.ReverseTextFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -30,44 +30,15 @@
         </com.alexpi.texttools.custom.CustomTextField>
 
 
-        <com.alexpi.texttools.custom.CustomTextField
-            android:id="@+id/joinCharacterField"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/inputField">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/joinCharacterEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/join_char" />
-        </com.alexpi.texttools.custom.CustomTextField>
-
         <CheckBox
-            android:id="@+id/deleteBlankLinesCheckbox"
+            android:id="@+id/lineByLineModeCheckbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:checked="true"
-            android:text="@string/delete_blank_lines_title"
+            android:text="@string/line_by_line_mode_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/joinCharacterField"/>
-
-        <CheckBox
-            android:id="@+id/trimLinesCheckbox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:checked="true"
-            android:text="@string/trim_lines_title"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/deleteBlankLinesCheckbox"/>
+            app:layout_constraintTop_toBottomOf="@+id/inputField"/>
 
         <TextView
             android:id="@+id/resultLabel"
@@ -77,7 +48,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/joinButton"
+            app:layout_constraintTop_toBottomOf="@id/reverseButton"
             android:gravity="top" />
 
         <ProgressBar
@@ -88,20 +59,20 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/joinButton" />
+            app:layout_constraintTop_toBottomOf="@id/reverseButton" />
 
 
         <Button
-            android:id="@+id/joinButton"
+            android:id="@+id/reverseButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:padding="16dp"
-            android:text="@string/join"
+            android:text="@string/reverse"
             android:textColor="@android:color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/trimLinesCheckbox" />
+            app:layout_constraintTop_toBottomOf="@id/lineByLineModeCheckbox" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

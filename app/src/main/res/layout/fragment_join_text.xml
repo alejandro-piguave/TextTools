@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    tools:context="com.alexpi.texttools.RepeatTextActivity">
+    tools:context="com.alexpi.texttools.fragment.JoinTextFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -29,8 +29,9 @@
                 android:hint="@string/input_text_title" />
         </com.alexpi.texttools.custom.CustomTextField>
 
+
         <com.alexpi.texttools.custom.CustomTextField
-            android:id="@+id/prefixField"
+            android:id="@+id/joinCharacterField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -40,50 +41,33 @@
             app:layout_constraintTop_toBottomOf="@+id/inputField">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/prefixEditText"
+                android:id="@+id/joinCharacterEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/prefix_text" />
+                android:hint="@string/join_char" />
         </com.alexpi.texttools.custom.CustomTextField>
 
-        <RadioGroup
-            android:id="@+id/textPrefixModeRadioGroup"
+        <CheckBox
+            android:id="@+id/deleteBlankLinesCheckbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/prefixField">
+            android:checked="true"
+            android:text="@string/delete_blank_lines_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/joinCharacterField"/>
 
-            <RadioButton
-                android:id="@+id/singleLineModeRadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="@string/single_line_mode_title"/>
-
-            <RadioButton
-                android:id="@+id/lineByLineModeRadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/line_by_line_mode_title"/>
-
-            <CheckBox
-                android:id="@+id/skipEmptyLinesCheckbox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/skip_empty_lines"
-                android:visibility="visible"
-                android:layout_marginStart="24dp"
-                android:layout_marginLeft="24dp" />
-
-            <RadioButton
-                android:id="@+id/paragraphModeRadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/paragraph_mode_title"/>
-
-        </RadioGroup>
+        <CheckBox
+            android:id="@+id/trimLinesCheckbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:checked="true"
+            android:text="@string/trim_lines_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/deleteBlankLinesCheckbox"/>
 
         <TextView
             android:id="@+id/resultLabel"
@@ -93,7 +77,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/addPrefixButton"
+            app:layout_constraintTop_toBottomOf="@id/joinButton"
             android:gravity="top" />
 
         <ProgressBar
@@ -104,20 +88,20 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/addPrefixButton" />
+            app:layout_constraintTop_toBottomOf="@id/joinButton" />
 
 
         <Button
-            android:id="@+id/addPrefixButton"
+            android:id="@+id/joinButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:padding="16dp"
-            android:text="@string/split"
+            android:text="@string/join"
             android:textColor="@android:color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textPrefixModeRadioGroup" />
+            app:layout_constraintTop_toBottomOf="@id/trimLinesCheckbox" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

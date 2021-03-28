@@ -1,15 +1,17 @@
-package com.alexpi.texttools
+package com.alexpi.texttools.fragment
 
-import android.os.Bundle
+import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
-import com.alexpi.texttools.databinding.ActivityTruncateTextBinding
+import com.alexpi.texttools.R
+import com.alexpi.texttools.base.BaseToolFragment
+import com.alexpi.texttools.databinding.FragmentTruncateTextBinding
 import com.alexpi.texttools.extension.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class TruncateTextActivity : BaseToolActivity<ActivityTruncateTextBinding>() {
+class TruncateTextFragment : BaseToolFragment<FragmentTruncateTextBinding>() {
 
     override fun setUp() {
         with(binding){
@@ -78,7 +80,7 @@ class TruncateTextActivity : BaseToolActivity<ActivityTruncateTextBinding>() {
         }
     }
 
-    override fun getViewBinding(): ActivityTruncateTextBinding = ActivityTruncateTextBinding.inflate(layoutInflater)
+    override fun getViewBinding(container: ViewGroup?): FragmentTruncateTextBinding = FragmentTruncateTextBinding.inflate(layoutInflater, container, false)
 
     override fun getResultString(): String = binding.resultLabel.text.toString()
 }

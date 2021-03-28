@@ -1,19 +1,21 @@
-package com.alexpi.texttools
+package com.alexpi.texttools.fragment
 
+import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
+import com.alexpi.texttools.R
+import com.alexpi.texttools.base.BaseToolFragment
 import com.alexpi.texttools.custom.*
-import com.alexpi.texttools.databinding.ActivityAddPrefixBinding
+import com.alexpi.texttools.databinding.FragmentAddPrefixBinding
 import com.alexpi.texttools.extension.lineByLineTransform
 import com.alexpi.texttools.extension.paragraphTransform
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class AddPrefixActivity : BaseToolActivity<ActivityAddPrefixBinding>() {
+class AddPrefixFragment : BaseToolFragment<FragmentAddPrefixBinding>() {
 
     override fun setUp() {
-
         with(binding){
             lineByLineModeRadioButton.setOnCheckedChangeListener { _, isChecked ->
                 skipEmptyLinesCheckbox.isVisible = isChecked
@@ -50,7 +52,7 @@ class AddPrefixActivity : BaseToolActivity<ActivityAddPrefixBinding>() {
         }
     }
 
-    override fun getViewBinding(): ActivityAddPrefixBinding = ActivityAddPrefixBinding.inflate(layoutInflater)
+    override fun getViewBinding(container: ViewGroup?): FragmentAddPrefixBinding = FragmentAddPrefixBinding.inflate(layoutInflater, container, false)
 
     override fun getResultString(): String  = binding.resultLabel.text.toString()
 }

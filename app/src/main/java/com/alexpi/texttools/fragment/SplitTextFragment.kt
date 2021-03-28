@@ -1,12 +1,12 @@
-package com.alexpi.texttools
+package com.alexpi.texttools.fragment
 
+import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
-import com.alexpi.texttools.custom.LengthSeparator
-import com.alexpi.texttools.custom.RegexSeparator
-import com.alexpi.texttools.custom.SplitSeparator
-import com.alexpi.texttools.custom.SymbolSeparator
-import com.alexpi.texttools.databinding.ActivitySplitTextBinding
+import com.alexpi.texttools.R
+import com.alexpi.texttools.base.BaseToolFragment
+import com.alexpi.texttools.custom.*
+import com.alexpi.texttools.databinding.FragmentSplitTextBinding
 import com.alexpi.texttools.extension.collapse
 import com.alexpi.texttools.extension.expand
 import com.alexpi.texttools.extension.insertPeriodically
@@ -15,10 +15,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.util.regex.PatternSyntaxException
 
-class SplitTextActivity : BaseToolActivity<ActivitySplitTextBinding>() {
-
-    override fun getViewBinding(): ActivitySplitTextBinding  = ActivitySplitTextBinding.inflate(layoutInflater)
-
+class SplitTextFragment: BaseToolFragment<FragmentSplitTextBinding>() {
 
     override fun setUp(){
         with(binding){
@@ -33,7 +30,7 @@ class SplitTextActivity : BaseToolActivity<ActivitySplitTextBinding>() {
                         val delimiter = symbolEditText.text.toString()
                         if(delimiter.isEmpty()) symbolField.showError(getString(R.string.invalid_symbol))
                         else splitText(inputText,
-                                SymbolSeparator(delimiter), outputChar, charBeforeChunk, charAfterChunk)
+                            SymbolSeparator(delimiter), outputChar, charBeforeChunk, charAfterChunk)
                     }
                     R.id.regexRadioButton -> {
                         try {
@@ -95,4 +92,6 @@ class SplitTextActivity : BaseToolActivity<ActivitySplitTextBinding>() {
     }
 
     override fun getResultString(): String = binding.resultLabel.text.toString()
+
+    override fun getViewBinding(container: ViewGroup?): FragmentSplitTextBinding = FragmentSplitTextBinding.inflate(layoutInflater, container, false)
 }

@@ -6,13 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    tools:context="com.alexpi.texttools.RepeatTextActivity">
+    tools:context="com.alexpi.texttools.fragment.RepeatTextFragment">
 
     <com.alexpi.texttools.custom.CustomTextField
         android:id="@+id/inputField"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,28 +26,28 @@
     </com.alexpi.texttools.custom.CustomTextField>
 
     <com.alexpi.texttools.custom.CustomTextField
-        android:id="@+id/textLengthField"
+        android:id="@+id/repetitionsField"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/inputField">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textLengthEditText"
+            android:id="@+id/repetitionsInputText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/length"
+            android:hint="@string/num_repetitions"
             android:inputType="number" />
     </com.alexpi.texttools.custom.CustomTextField>
 
 
     <com.alexpi.texttools.custom.CustomTextField
-        android:id="@+id/leftPaddingCharField"
+        android:id="@+id/delimiterField"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -55,26 +55,15 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textLengthField">
+        app:layout_constraintTop_toBottomOf="@id/repetitionsField">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/leftPaddingCharEditText"
+            android:id="@+id/delimiterEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:hint="@string/padding_char" />
+            android:hint="@string/delimiter_title" />
     </com.alexpi.texttools.custom.CustomTextField>
-
-    <CheckBox
-        android:id="@+id/lineByLinePaddingCheckbox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/line_by_line_padding"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/leftPaddingCharField" />
-
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
@@ -86,7 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addLeftPaddingButton">
+        app:layout_constraintTop_toBottomOf="@id/repeatButton">
 
 
         <TextView
@@ -104,20 +93,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addLeftPaddingButton" />
+        app:layout_constraintTop_toBottomOf="@id/repeatButton" />
 
     <Button
-        android:id="@+id/addLeftPaddingButton"
+        android:id="@+id/repeatButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
         android:padding="16dp"
-        android:text="@string/add_left_padding"
+        android:layout_marginBottom="16dp"
+        android:text="@string/repeat"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@id/nestedScrollView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lineByLinePaddingCheckbox" />
+        app:layout_constraintTop_toBottomOf="@id/delimiterField" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

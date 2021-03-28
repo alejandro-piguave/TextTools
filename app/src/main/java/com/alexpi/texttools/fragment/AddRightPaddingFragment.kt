@@ -1,15 +1,18 @@
-package com.alexpi.texttools
+package com.alexpi.texttools.fragment
 
+import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
-import com.alexpi.texttools.databinding.ActivityAddRightPaddingBinding
+import com.alexpi.texttools.R
+import com.alexpi.texttools.base.BaseToolFragment
+import com.alexpi.texttools.databinding.FragmentAddRightPaddingBinding
 import com.alexpi.texttools.extension.lineByLineTransform
 import com.alexpi.texttools.extension.padEnd
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class AddRightPaddingActivity : BaseToolActivity<ActivityAddRightPaddingBinding>() {
+class AddRightPaddingFragment : BaseToolFragment<FragmentAddRightPaddingBinding>() {
     override fun setUp() {
         with(binding){
             addRightPaddingButton.setOnClickListener {
@@ -40,7 +43,7 @@ class AddRightPaddingActivity : BaseToolActivity<ActivityAddRightPaddingBinding>
         }
     }
 
-    override fun getViewBinding(): ActivityAddRightPaddingBinding = ActivityAddRightPaddingBinding.inflate(layoutInflater)
+    override fun getViewBinding(container: ViewGroup?): FragmentAddRightPaddingBinding = FragmentAddRightPaddingBinding.inflate(layoutInflater, container, false)
 
     override fun getResultString(): String  = binding.resultLabel.text.toString()
 }

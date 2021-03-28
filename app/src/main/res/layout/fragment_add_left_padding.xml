@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    tools:context="com.alexpi.texttools.RepeatTextActivity">
+    tools:context="com.alexpi.texttools.fragment.RepeatTextFragment">
 
     <com.alexpi.texttools.custom.CustomTextField
         android:id="@+id/inputField"
@@ -47,7 +47,7 @@
 
 
     <com.alexpi.texttools.custom.CustomTextField
-        android:id="@+id/rightPaddingCharField"
+        android:id="@+id/leftPaddingCharField"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
         app:layout_constraintTop_toBottomOf="@id/textLengthField">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/rightPaddingCharEditText"
+            android:id="@+id/leftPaddingCharEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -73,7 +73,7 @@
         android:text="@string/line_by_line_padding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rightPaddingCharField" />
+        app:layout_constraintTop_toBottomOf="@+id/leftPaddingCharField" />
 
 
     <androidx.core.widget.NestedScrollView
@@ -86,7 +86,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addRightPaddingButton">
+        app:layout_constraintTop_toBottomOf="@id/addLeftPaddingButton">
 
 
         <TextView
@@ -104,10 +104,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addRightPaddingButton" />
+        app:layout_constraintTop_toBottomOf="@id/addLeftPaddingButton" />
 
     <Button
-        android:id="@+id/addRightPaddingButton"
+        android:id="@+id/addLeftPaddingButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"

@@ -3,42 +3,60 @@ package com.alexpi.texttools
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.ProgressBar
-import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.viewbinding.ViewBinding
-import com.alexpi.texttools.MainActivity.Companion.EXTRA_TOOL_NAME
+import androidx.fragment.app.commit
+import com.alexpi.texttools.base.BaseToolFragment
+import com.alexpi.texttools.custom.TextTool
+import com.alexpi.texttools.databinding.ActivityToolBinding
+import com.alexpi.texttools.fragment.*
+import com.google.android.gms.ads.AdRequest
 import com.google.android.material.snackbar.Snackbar
 
-abstract class BaseToolActivity<B: ViewBinding>: AppCompatActivity() {
-
+class ToolActivity : AppCompatActivity() {
     companion object{
         private const val MAX_CLIPBOARD_LABEL_LENGTH = 250
     }
 
-    lateinit var binding: B
+    private lateinit var textTool: TextTool
+
+    private lateinit var binding: ActivityToolBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = getViewBinding()
+        binding = ActivityToolBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val toolName = intent.getStringExtra(EXTRA_TOOL_NAME)
+        binding.toolBanner.loadAd(AdRequest.Builder().build())
+
+        val toolName = intent.getStringExtra(MainActivity.EXTRA_TOOL_NAME)
+        val fragmentNumber = intent.getIntExtra(MainActivity.EXTRA_FRAGMENT_NUMER, 0)
         supportActionBar?.title = toolName
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        setUp()
+
+        supportFragmentManager.commit {
+            replace(R.id.container, getToolFragment(fragmentNumber).also { textTool = it })
+        }
     }
 
-    open fun setUp(){}
+    private fun getToolFragment(n: Int): BaseToolFragment<*> =
+        when(n){
+            0 -> SplitTextFragment()
+            1 -> JoinTextFragment()
+            2 -> RepeatTextFragment()
+            3 -> ReverseTextFragment()
+            4 -> TruncateTextFragment()
+            5 -> TrimTextFragment()
+            6 -> AddLeftPaddingFragment()
+            7 -> AddRightPaddingFragment()
+            else -> AddPrefixFragment()
+        }
 
-    abstract fun getViewBinding(): B
-    abstract fun getResultString(): String
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val resultString = getResultString()
+        val resultString = textTool.getResultString()
         when(item.itemId){
             android.R.id.home -> {
                 finish()
@@ -47,9 +65,9 @@ abstract class BaseToolActivity<B: ViewBinding>: AppCompatActivity() {
             R.id.share -> {
                 if (resultString.isEmpty()) {
                     Toast.makeText(
-                            this,
-                            resources.getString(R.string.invalid_output_text),
-                            Toast.LENGTH_SHORT
+                        this,
+                        resources.getString(R.string.invalid_output_text),
+                        Toast.LENGTH_SHORT
                     ).show()
                 } else {
                     try {
@@ -60,7 +78,7 @@ abstract class BaseToolActivity<B: ViewBinding>: AppCompatActivity() {
                         startActivity(sendIntent)
                     }catch (e: Exception){
                         Snackbar.make(findViewById(android.R.id.content),R.string.text_too_long_to_be_shared,
-                                Snackbar.LENGTH_LONG).show()
+                            Snackbar.LENGTH_LONG).show()
                     }
                 }
                 return true
@@ -68,16 +86,16 @@ abstract class BaseToolActivity<B: ViewBinding>: AppCompatActivity() {
             R.id.copy -> {
                 if (resultString.isEmpty()) {
                     Toast.makeText(
-                            this,
-                            resources.getString(R.string.invalid_output_text),
-                            Toast.LENGTH_SHORT
+                        this,
+                        resources.getString(R.string.invalid_output_text),
+                        Toast.LENGTH_SHORT
                     ).show()
                 } else {
                     val manager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
                     try{
                         manager.setPrimaryClip(ClipData.newPlainText(resultString.take(MAX_CLIPBOARD_LABEL_LENGTH), resultString))
                         Toast.makeText(this, getString(R.string.clipboard_copied), Toast.LENGTH_SHORT)
-                                .show()
+                            .show()
                     }catch (e: Exception){
                         Snackbar.make(findViewById(android.R.id.content),R.string.text_too_long_to_be_copied, Snackbar.LENGTH_LONG).show()
                     }

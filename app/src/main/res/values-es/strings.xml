@@ -31,6 +31,7 @@
         <item>Recortar texto</item>
         <item>Añadir relleno por la izquierda</item>
         <item>Añadir relleno por la derecha</item>
+        <item>Añadir prefijo</item>
     </string-array>
     <string name="use_newline_char_as_separator">Usar caracter de salto de línea como delimitador</string>
     <string name="delimiter_title">Delimitador</string>

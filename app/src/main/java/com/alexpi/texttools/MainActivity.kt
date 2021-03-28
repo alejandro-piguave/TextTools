@@ -24,16 +24,7 @@ class MainActivity : AppCompatActivity() {
             val toolsList = resources.getStringArray(R.array.text_tools)
             val adapter =
                 TextToolsAdapter(toolsList.toList()) { position, toolName ->
-                    when (position) {
-                        0 -> startToolActivity<SplitTextActivity>(toolName)
-                        1 -> startToolActivity<JoinTextActivity>(toolName)
-                        2 -> startToolActivity<RepeatTextActivity>(toolName)
-                        3 -> startToolActivity<ReverseTextActivity>(toolName)
-                        4 -> startToolActivity<TruncateTextActivity>(toolName)
-                        5 -> startToolActivity<TrimTextActivity>(toolName)
-                        6 -> startToolActivity<AddLeftPaddingActivity>(toolName)
-                        7 -> startToolActivity<AddRightPaddingActivity>(toolName)
-                    }
+                    startToolActivity(position, toolName)
                 }
 
             toolsView.adapter = adapter
@@ -43,13 +34,15 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private inline fun <reified T: AppCompatActivity> startToolActivity(toolName: String){
-        val intent = Intent(this, T::class.java)
+    private fun startToolActivity(position: Int, toolName: String){
+        val intent = Intent(this,ToolActivity::class.java)
         intent.putExtra(EXTRA_TOOL_NAME,toolName)
+        intent.putExtra(EXTRA_FRAGMENT_NUMER, position)
         startActivity(intent)
     }
 
     companion object {
         const val EXTRA_TOOL_NAME = "com.alexpi.texttools.TOOL_NAME"
+        const val EXTRA_FRAGMENT_NUMER = "com.alexpi.texttools.FRAGMENT_NUMBER"
     }
 }

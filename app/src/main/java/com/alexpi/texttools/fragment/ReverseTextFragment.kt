@@ -1,17 +1,18 @@
-package com.alexpi.texttools
+package com.alexpi.texttools.fragment
 
-import android.os.Bundle
+import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
-import com.alexpi.texttools.databinding.ActivityReverseTextBinding
+import com.alexpi.texttools.base.BaseToolFragment
+import com.alexpi.texttools.databinding.FragmentReverseTextBinding
 import com.alexpi.texttools.extension.lineByLineTransform
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class ReverseTextActivity : BaseToolActivity<ActivityReverseTextBinding>() {
+class ReverseTextFragment : BaseToolFragment<FragmentReverseTextBinding>() {
 
-    override fun getViewBinding(): ActivityReverseTextBinding = ActivityReverseTextBinding.inflate(layoutInflater)
+    override fun getViewBinding(container: ViewGroup?): FragmentReverseTextBinding = FragmentReverseTextBinding.inflate(layoutInflater, container, false)
 
     override fun getResultString(): String = binding.resultLabel.text.toString()
 
@@ -28,7 +29,7 @@ class ReverseTextActivity : BaseToolActivity<ActivityReverseTextBinding>() {
     private fun reverse(inputText: String, lineByLine: Boolean){
         binding.progressView.isVisible = true
         lifecycleScope.launch(Dispatchers.Default) {
-            val resultText = if (lineByLine) inputText.lineByLineTransform("\n"){ it.reversed() } else inputText.reversed()
+            val resultText = if (lineByLine) inputText.lineByLineTransform{ it.reversed() } else inputText.reversed()
 
             withContext(Dispatchers.Main){
                 binding.resultLabel.text = resultText
