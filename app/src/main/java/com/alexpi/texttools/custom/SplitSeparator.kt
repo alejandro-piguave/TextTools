@@ -1,4 +1,4 @@
-package com.alexpi.texttools
+package com.alexpi.texttools.custom
 
 import kotlin.text.Regex
 

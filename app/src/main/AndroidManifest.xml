@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TextTools">
+        <activity android:name=".AddPrefixActivity" />
         <activity android:name=".AddRightPaddingActivity" />
         <activity android:name=".AddLeftPaddingActivity" />
         <activity android:name=".TrimTextActivity" />

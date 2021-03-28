@@ -80,5 +80,10 @@
     <string name="add_left_padding">Add left padding</string>
     <string name="line_by_line_padding">Line-by-line padding</string>
     <string name="add_right_padding">Add right padding</string>
+    <string name="add_prefix">Add prefix</string>
+    <string name="single_line_mode_title">Single-line mode</string>
+    <string name="paragraph_mode_title">Paragraph mode</string>
+    <string name="skip_empty_lines">Skip empty lines</string>
+    <string name="prefix_text">Prefix text</string>
 
 </resources>

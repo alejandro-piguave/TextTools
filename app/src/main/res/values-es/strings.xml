@@ -79,5 +79,10 @@
     <string name="add_left_padding">Añadir relleno por la izquierda</string>
     <string name="line_by_line_padding">Rellenar línea por línea</string>
     <string name="add_right_padding">Añadir relleno por la derecha</string>
+    <string name="add_prefix">Añadir prefijo</string>
+    <string name="skip_empty_lines">Omitir lineas vacías</string>
+    <string name="paragraph_mode_title">Modo párrafo</string>
+    <string name="single_line_mode_title">Modo única línea</string>
+    <string name="prefix_text">Prefijo</string>
 
 </resources>

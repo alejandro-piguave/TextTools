@@ -1,8 +1,11 @@
 package com.alexpi.texttools
 
-import android.os.Bundle
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
+import com.alexpi.texttools.custom.LengthSeparator
+import com.alexpi.texttools.custom.RegexSeparator
+import com.alexpi.texttools.custom.SplitSeparator
+import com.alexpi.texttools.custom.SymbolSeparator
 import com.alexpi.texttools.databinding.ActivitySplitTextBinding
 import com.alexpi.texttools.extension.collapse
 import com.alexpi.texttools.extension.expand
@@ -73,8 +76,6 @@ class SplitTextActivity : BaseToolActivity<ActivitySplitTextBinding>() {
             }
         }
     }
-
-
 
     private fun splitText(inputText: String, splitSeparator: SplitSeparator, outputChar: String, charBeforeChunk: String, charAfterChunk: String){
         binding.progressView.isVisible = true
