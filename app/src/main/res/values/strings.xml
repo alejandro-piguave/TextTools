@@ -33,6 +33,7 @@
         <item>Add left padding</item>
         <item>Add right padding</item>
         <item>Add prefix</item>
+        <item>Add suffix</item>
     </string-array>
     <string name="use_newline_char_as_separator">Use newline character as delimiter</string>
     <string name="delimiter_title">Delimiter</string>
@@ -86,5 +87,7 @@
     <string name="paragraph_mode_title">Paragraph mode</string>
     <string name="skip_empty_lines">Skip empty lines</string>
     <string name="prefix_text">Prefix text</string>
+    <string name="suffix_text">Suffix text</string>
+    <string name="add_suffix">Add suffix</string>
 
 </resources>

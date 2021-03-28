@@ -32,6 +32,7 @@
         <item>Añadir relleno por la izquierda</item>
         <item>Añadir relleno por la derecha</item>
         <item>Añadir prefijo</item>
+        <item>Añadir sufijo</item>
     </string-array>
     <string name="use_newline_char_as_separator">Usar caracter de salto de línea como delimitador</string>
     <string name="delimiter_title">Delimitador</string>
@@ -85,5 +86,7 @@
     <string name="paragraph_mode_title">Modo párrafo</string>
     <string name="single_line_mode_title">Modo única línea</string>
     <string name="prefix_text">Prefijo</string>
+    <string name="suffix_text">Sufijo</string>
+    <string name="add_suffix">Añadir sufijo</string>
 
 </resources>

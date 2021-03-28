@@ -30,7 +30,7 @@
         </com.alexpi.texttools.custom.CustomTextField>
 
         <com.alexpi.texttools.custom.CustomTextField
-            android:id="@+id/prefixField"
+            android:id="@+id/affixField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -40,20 +40,19 @@
             app:layout_constraintTop_toBottomOf="@+id/inputField">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/prefixEditText"
+                android:id="@+id/affixEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/prefix_text" />
+                android:layout_height="wrap_content" />
         </com.alexpi.texttools.custom.CustomTextField>
 
         <RadioGroup
-            android:id="@+id/textPrefixModeRadioGroup"
+            android:id="@+id/textAffixModeRadioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/prefixField">
+            app:layout_constraintTop_toBottomOf="@+id/affixField">
 
             <RadioButton
                 android:id="@+id/singleLineModeRadioButton"
@@ -73,7 +72,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/skip_empty_lines"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp" />
 
@@ -93,7 +92,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/addPrefixButton"
+            app:layout_constraintTop_toBottomOf="@id/addAffixButton"
             android:gravity="top" />
 
         <ProgressBar
@@ -104,20 +103,19 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/addPrefixButton" />
+            app:layout_constraintTop_toBottomOf="@id/addAffixButton" />
 
 
         <Button
-            android:id="@+id/addPrefixButton"
+            android:id="@+id/addAffixButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:padding="16dp"
-            android:text="@string/split"
             android:textColor="@android:color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textPrefixModeRadioGroup" />
+            app:layout_constraintTop_toBottomOf="@id/textAffixModeRadioGroup" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
