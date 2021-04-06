@@ -26,9 +26,9 @@ class SplitTextFragment: BaseToolFragment<FragmentSplitTextBinding>() {
                 val charBeforeChunk = charBeforeChunkEditText.text.toString()
                 val charAfterChunk = charAfterChunkEditText.text.toString()
                 when(splitSeparatorOptionsRadioGroup.checkedRadioButtonId){
-                    R.id.symbolRadioButton -> {
+                    R.id.textPatternRadioButton -> {
                         val delimiter = symbolEditText.text.toString()
-                        if(delimiter.isEmpty()) symbolField.showError(getString(R.string.invalid_symbol))
+                        if(delimiter.isEmpty()) symbolField.showError(getString(R.string.invalid_text_pattern))
                         else splitText(inputText,
                             SymbolSeparator(delimiter), outputChar, charBeforeChunk, charAfterChunk)
                     }

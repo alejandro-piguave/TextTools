@@ -53,7 +53,9 @@ class ToolActivity : AppCompatActivity() {
             7 -> AddRightPaddingFragment()
             8 -> AddPrefixFragment()
             9 -> AddSuffixFragment()
-            else -> RemoveEmptyLinesFragment()
+            10 -> RemoveEmptyLinesFragment()
+            11 -> RemoveDuplicateLinesFragment()
+            else -> FilterTextFragment()
         }
 
 

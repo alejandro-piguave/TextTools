@@ -35,6 +35,8 @@
         <item>Add prefix</item>
         <item>Add suffix</item>
         <item>Remove empty lines</item>
+        <item>Remove duplicate lines</item>
+        <item>Filter text</item>
     </string-array>
     <string name="use_newline_char_as_separator">Use newline character as delimiter</string>
     <string name="delimiter_title">Delimiter</string>
@@ -52,7 +54,7 @@
     <string name="char_before_chunk">Character before chunk</string>
     <string name="char_after_chunk">Char after chunk</string>
     <string name="output_separator_options">Output separator options</string>
-    <string name="invalid_symbol">Invalid symbol</string>
+    <string name="invalid_text_pattern">Invalid text pattern</string>
     <string name="invalid_regex">Invalid regular expression</string>
     <string name="invalid_length">Invalid length</string>
     <string name="join_char">Join character</string>
@@ -91,5 +93,13 @@
     <string name="suffix_text">Suffix text</string>
     <string name="add_suffix">Add suffix</string>
     <string name="remove_empty_lines">Remove empty lines</string>
+    <string name="remove_duplicate_lines">Remove duplicate lines</string>
+    <string name="use_a_text_to_filter">Use a text</string>
+    <string name="use_a_regex">Use a regular expression</string>
+    <string name="input_text_to_filter">Text to filter</string>
+    <string name="input_text_to_filter_helper_text">Extract text lines that contain this text.</string>
+    <string name="use_a_regex_helper_text">Extract text lines that match this regular expression.</string>
+    <string name="reverse_filter_mode">Reverse filter mode</string>
+    <string name="filter">Filter</string>
 
 </resources>
