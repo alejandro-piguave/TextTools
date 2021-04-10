@@ -72,8 +72,8 @@
     <string name="truncation_indicator">Sufijo o prefijo de truncado</string>
     <string name="truncate">Truncar</string>
     <string name="invalid_truncation_length">La longitud del prefijo/sufijo no puede ser mayor a la longitud de truncado</string>
-    <string name="output_separator_helper_text">Caracter que se colocará entre los fragmentos separados.</string>
-    <string name="input_char_separator_helper_text">Caracter que se usará para dividir el texto en fragmentos.</string>
+    <string name="output_separator_helper_text">Caracter que se colocará entre los fragmentos separados. (Salto de línea por defecto.)</string>
+    <string name="input_char_separator_helper_text">Caracter que se usará para dividir el texto en fragmentos. (Espacio por defecto.)</string>
     <string name="input_regex_separator_helper_text">Expresión regular que se usará para divir el texto en fragmentos.</string>
     <string name="input_length_separator_helper_text">Número de caracteres que se pondrá en cada fragmento de salida.</string>
     <string name="left_side_trimming_title">Recortar por la izquierda</string>
@@ -85,7 +85,7 @@
     <string name="line_by_line_padding">Rellenar línea por línea</string>
     <string name="add_right_padding">Añadir relleno por la derecha</string>
     <string name="add_prefix">Añadir prefijo</string>
-    <string name="skip_empty_lines">Omitir lineas vacías</string>
+    <string name="skip_empty_lines">Omitir líneas vacías</string>
     <string name="paragraph_mode_title">Modo párrafo</string>
     <string name="single_line_mode_title">Modo única línea</string>
     <string name="prefix_text">Prefijo</string>

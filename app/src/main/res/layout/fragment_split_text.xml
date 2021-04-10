@@ -70,7 +70,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/input_char"
-                    android:text="\\n"/>
+                    android:text=" "/>
             </com.alexpi.texttools.custom.CustomTextField>
 
             <RadioButton
@@ -93,7 +93,8 @@
                     android:id="@+id/regexEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/regex"/>
+                    android:hint="@string/regex"
+                    android:text="/\\s+/"/>
             </com.alexpi.texttools.custom.CustomTextField>
 
             <RadioButton
@@ -117,7 +118,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
-                    android:hint="@string/length"/>
+                    android:hint="@string/length"
+                    android:text="16"/>
             </com.alexpi.texttools.custom.CustomTextField>
         </RadioGroup>
 
@@ -155,7 +157,8 @@
                     android:id="@+id/outputCharacterEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/output_char" />
+                    android:hint="@string/output_char"
+                    android:text="\\n"/>
             </com.alexpi.texttools.custom.CustomTextField>
 
             <com.alexpi.texttools.custom.CustomTextField

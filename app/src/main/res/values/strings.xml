@@ -73,8 +73,8 @@
     <string name="truncation_indicator">Truncation suffix or prefix</string>
     <string name="truncate">Truncate</string>
     <string name="invalid_truncation_length">Prefix/suffix length can\'t be greater than truncation length</string>
-    <string name="output_separator_helper_text">Character that will be put between the split chunks.</string>
-    <string name="input_char_separator_helper_text">Character that will be used to break text into parts.</string>
+    <string name="output_separator_helper_text">Character that will be put between the split chunks. (Newline by default.)</string>
+    <string name="input_char_separator_helper_text">Character that will be used to break text into parts. (Space by default.)</string>
     <string name="input_regex_separator_helper_text">Regular expression that will be used to break text into parts.</string>
     <string name="input_length_separator_helper_text">Number of characters that will be put in each output chunk.</string>
     <string name="left_side_trimming_title">Left-side trimming</string>
