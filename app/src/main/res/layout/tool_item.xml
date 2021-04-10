@@ -3,29 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="150dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/toolCard"
-        android:layout_margin="4dp"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="8dp"
+        card_view:cardElevation="4dp"
+        android:layout_gravity="center"
+        android:layout_margin="6dp"
         android:foreground="?android:attr/selectableItemBackground"
         android:clickable="true"
-        android:focusable="true"
-        app:cardBackgroundColor="?attr/colorPrimary">
-        <TextView
+        android:focusable="true">
+
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/toolName"
-            android:layout_gravity="center"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="18sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Repeat text"/>
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:textAppearance="@style/Theme.TextTools.CardView.TextView"
+            android:textStyle="bold"
+            tools:text="Lorem ipsum long text that I am not even going to take the time to read" />
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 </FrameLayout>
