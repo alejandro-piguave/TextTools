@@ -62,7 +62,6 @@ class MainActivity : AppCompatActivity(), ToolItemCallback {
             supportFragmentManager.commit {
                 replace(R.id.containerB, getToolFragment(position))
             }
-            supportActionBar?.title = toolName
         } else {
             startToolActivity(position, toolName)
         }

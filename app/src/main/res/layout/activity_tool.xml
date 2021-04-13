@@ -20,11 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         ads:adSize="SMART_BANNER"
-<<<<<<< Updated upstream
         ads:adUnitId="@string/main_banner_id_unit"
-=======
-        ads:adUnitId="@string/test_banner_id_unit"
->>>>>>> Stashed changes
         ads:layout_constraintTop_toBottomOf="@id/container"
         ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintEnd_toEndOf="parent"
