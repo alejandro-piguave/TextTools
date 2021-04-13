@@ -3,13 +3,21 @@ package com.alexpi.texttools
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.*
+import android.text.TextUtils.replace
+import androidx.core.view.isVisible
+import androidx.fragment.app.commit
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.alexpi.texttools.custom.TextToolsAdapter
+import com.alexpi.texttools.custom.ToolItemCallback
 import com.alexpi.texttools.databinding.ActivityMainBinding
+import com.alexpi.texttools.extension.getToolFragment
+import com.alexpi.texttools.fragment.ToolListFragment
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ToolItemCallback {
+    private var isDualPane = false
 
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,15 +29,18 @@ class MainActivity : AppCompatActivity() {
 
         with(binding){
             mainBanner.loadAd(AdRequest.Builder().build())
-            val toolsList = resources.getStringArray(R.array.text_tools)
-            val adapter =
-                TextToolsAdapter(toolsList.toList()) { position, toolName ->
-                    startToolActivity(position, toolName)
-                }
 
-            toolsView.adapter = adapter
-            toolsView.layoutManager = GridLayoutManager(this@MainActivity,2)
-            toolsView.setHasFixedSize(true)
+            supportFragmentManager.commit {
+                replace(R.id.containerA, ToolListFragment())
+            }
+
+            isDualPane = containerB?.isVisible ?: false
+
+            if(isDualPane){
+                supportFragmentManager.commit {
+                    replace(R.id.containerB, getToolFragment(0))
+                }
+            }
         }
     }
 
@@ -44,5 +55,16 @@ class MainActivity : AppCompatActivity() {
     companion object {
         const val EXTRA_TOOL_NAME = "com.alexpi.texttools.TOOL_NAME"
         const val EXTRA_FRAGMENT_NUMER = "com.alexpi.texttools.FRAGMENT_NUMBER"
+    }
+
+    override fun onToolItemClicked(position: Int, toolName: String) {
+        if(isDualPane){
+            supportFragmentManager.commit {
+                replace(R.id.containerB, getToolFragment(position))
+            }
+            supportActionBar?.title = toolName
+        } else {
+            startToolActivity(position, toolName)
+        }
     }
 }
